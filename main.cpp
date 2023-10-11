@@ -14,18 +14,18 @@ Build/Run often with this task to make sure you're not breaking the code with ea
     it's very easy to mess this task up. 
 
 your task: 
-    0) get familiar with the classes. 
+    *0) get familiar with the classes. 
 
-    1) Fix the include errors. 
+    *1) Fix the include errors. 
 
-    2) HighwayPatrol can check the speed of vehicles on the highway. 
+    *2) HighwayPatrol can check the speed of vehicles on the highway. 
         make this happen *without* adding getters to the Highway or Vehicle class 
         and *without* making any private member variables public
 
-    3) implement the Highway::addVehicleInternal 
+    *3) implement the Highway::addVehicleInternal 
         this function should call the non-evasive member function of the derived class, so use the technique shown in the Casting video.
 
-    4) implement the Highway::removeVehicleInternal
+    *4) implement the Highway::removeVehicleInternal
         this function should call the evasive member function of the derived class, if it has one. use the technique shown in the Casting video.
 
     5) Add a Truck type
@@ -55,6 +55,11 @@ your task:
 #include <vector>
 #include <algorithm>
 #include <cassert>
+#include "Highway.h"
+#include "HighwayPatrol.h"
+#include "Car.h"
+#include "Motorcycle.h"
+#include "SemiTruck.h"
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH

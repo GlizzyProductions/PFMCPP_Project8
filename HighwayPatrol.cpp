@@ -35,3 +35,10 @@ void HighwayPatrol::pullOver( Vehicle* v, bool willArrest, Highway* h )
         h->removeVehicle(v);
     }
 }
+
+int HighwayPatrol::checkSpeed(Vehicle* v)
+{
+    int vSpeed = 0;
+    v->speed = vSpeed;
+    return vSpeed;
+}
