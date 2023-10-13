@@ -28,15 +28,15 @@ your task:
     *4) implement the Highway::removeVehicleInternal
         this function should call the evasive member function of the derived class, if it has one. use the technique shown in the Casting video.
 
-    5) Add a Truck type
+    *5) Add a Truck type
         semi-trucks don't evade when they're pulled over, unlike cars and motorcycles.  
         write a member function called 'pullOver' that can be called for this requirement.
         They'll also need a separate member function that can be called when they are added to the highway.  
         Look at the Highway member functions for more hints on this.
 
-    6) Add some Cars to the Highway
-    7) Add some Motorcycles to the Highway
-    8) Add some SemiTrucks to the highway. 
+    *6) Add some Cars to the Highway
+    *7) Add some Motorcycles to the Highway
+    *8) Add some SemiTrucks to the highway. 
 
     9) clear any warnings as best you can, based on what you've learned in the previous projects
         see the note in main() about implementing the special member functions.
@@ -60,6 +60,7 @@ your task:
 #include "Car.h"
 #include "Motorcycle.h"
 #include "SemiTruck.h"
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -113,6 +114,8 @@ int main()
      reserve how ever many cars, motorcycles, and trucks you'll create first
      */
     cars.reserve(3); //reserving room for 3 Car instances
+    motorcycles.reserve(1);
+    trucks.reserve(2);
     
     /*
      Now that we have reserved space for our UDT instances inside the vector, we can construct them in-place inside the vector.
@@ -121,7 +124,13 @@ int main()
      use the vector member function 'emplace_back' to construct your car/truck/motorcycle instances in-place
      */
     cars.emplace_back("janice"); //constructing the first Car instance in-place in the cars vector
-    
+    cars.emplace_back("jane");
+    cars.emplace_back("jessica");
+    //---------------------------------
+    motorcycles.emplace_back("rob");
+    //---------------------------------
+    trucks.emplace_back("darryl");
+    trucks.emplace_back("corzell");
     /*
      construct 2 more Car instances via emplace_back.
      */
@@ -133,9 +142,26 @@ int main()
     
     
     
-    assert(false);
+    //assert(false);
     //add the cars, motorcycles and trucks to the highway using range-based for() loops: for( element : vec ) { ... }
     //be careful to not accidentally make element copies when iterating.
+    for (Car car : cars) 
+    {
+        Vehicle* vehiclePtr = &car;
+        highway.addVehicle(vehiclePtr);
+    }
+    
+    for (Motorcycle& motorcycle : motorcycles) 
+    {
+        Vehicle* vehiclePtr = &motorcycle;        
+        highway.addVehicle(vehiclePtr);
+    }
+    
+    for (SemiTruck& truck : trucks) 
+    {
+        Vehicle* vehiclePtr = &truck;           
+        highway.addVehicle(vehiclePtr);
+    }
     
     HighwayPatrol cop;
     cop.scanHighway(&highway);

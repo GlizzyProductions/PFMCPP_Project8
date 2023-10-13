@@ -1,5 +1,5 @@
 language = "cpp"
-run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-weak-vtables -Wno-padded -Wno-missing-prototypes -Wno-missing-noreturn main.cpp Car.cpp Highway.cpp HighwayPatrol.cpp Motorcycle.cpp && ./a.out"
+run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-padded -Wno-missing-prototypes -Wno-missing-noreturn main.cpp Car.cpp Highway.cpp HighwayPatrol.cpp Motorcycle.cpp SemiTruck.cpp Vehicle.cpp && ./a.out"
 hidden = ["ccls"]
 entrypoint = "main.cpp"
 
