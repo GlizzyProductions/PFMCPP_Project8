@@ -126,19 +126,19 @@ int main()
     cars.emplace_back("janice"); //constructing the first Car instance in-place in the cars vector
     cars.emplace_back("jane");
     cars.emplace_back("jessica");
-    //---------------------------------
-    motorcycles.emplace_back("rob");
-    //---------------------------------
-    trucks.emplace_back("darryl");
-    trucks.emplace_back("corzell");
+
+
     /*
      construct 2 more Car instances via emplace_back.
      */
-    
+    //---------------------------------
+    motorcycles.emplace_back("rob");
     /*
      now reserve and emplace_back your Trucks and Motorcyles
      */
-    
+    //---------------------------------
+    trucks.emplace_back("darryl");
+    trucks.emplace_back("corzell");
     
     
     
