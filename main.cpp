@@ -114,7 +114,7 @@ int main()
      reserve how ever many cars, motorcycles, and trucks you'll create first
      */
     cars.reserve(3); //reserving room for 3 Car instances
-    motorcycles.reserve(1);
+    motorcycles.reserve(3);
     trucks.reserve(2);
     
     /*
@@ -133,6 +133,8 @@ int main()
      */
     //---------------------------------
     motorcycles.emplace_back("rob");
+    motorcycles.emplace_back("dillbert");
+    motorcycles.emplace_back("banksy");
     /*
      now reserve and emplace_back your Trucks and Motorcyles
      */
